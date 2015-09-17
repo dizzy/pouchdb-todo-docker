@@ -1,0 +1,12 @@
+web:
+  build: todos/.
+  links:
+   - couchdb
+  ports:
+   - "8000:8000"
+  volumes:
+   - ./todos:/home/pouchdb/todos
+couchdb:
+  build: couchdb/.
+  ports:
+   - "5984:5984"
